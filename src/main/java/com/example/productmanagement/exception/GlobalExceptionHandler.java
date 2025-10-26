@@ -31,10 +31,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
-    /**
-     * Catches all other exceptions and returns a generic 500 response.  In
-     * production you may want to log the exception or hide internal details.
-     */
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleAllExceptions(Exception ex) {
         Map<String, Object> body = new HashMap<>();
@@ -47,7 +44,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * annotated with {@code @Valid} fails validation, this method returns a
      * map of field errors and a 400 Bad Request status.
      */
-    @Override
+    //@Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                  HttpHeaders headers,
                                                                  HttpStatus status,
